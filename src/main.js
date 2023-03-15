@@ -1,17 +1,17 @@
-// Fetch the items from the JSON file
+// Fetchでjsonを読み取る
 function loadItems() {
   return fetch('data/data.json')
     .then(response => response.json())
     .then(json => json.items);
 }
 
-// Update the list with the given items
+// projectを追加
 function displayItems(items) {
   const container = document.querySelector('.items');
   container.innerHTML = items.map(item => createHTMLString(item)).join('');
 }
 
-// Create HTML list item from the given date item
+// 追加する要素を作る
 function createHTMLString(item) {
   return `
     <li class="item">
@@ -21,6 +21,7 @@ function createHTMLString(item) {
     `;
 }
 
+// ボタンで切り替え
 function onButtonClick(event, items) {
   const dataset = event.target.dataset;
   const key = dataset.key;
