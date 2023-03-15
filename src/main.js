@@ -4,6 +4,13 @@ function loadItems() {
     .then(response => response.json())
     .then(json => json.items);
 }
+// 気になって　JSON.parse()で書いてみただけ
+// function loadItems() {
+//   return fetch('data/data.json')
+//     .then(response => response.text())
+//     .then(text => JSON.parse(text))
+//     .then(json => json.items);
+// }
 
 // projectを追加
 function displayItems(items) {
